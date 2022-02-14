@@ -44,9 +44,7 @@ const sendGetRequest = async () => {
 }
 sendGetRequest();
 
-
 export default {
-
   name: 'App',
 
   data: () => ({
