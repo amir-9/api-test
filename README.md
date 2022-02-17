@@ -1,8 +1,13 @@
 # test
 
-## Project setup
+## clone the project
 ```
-yarn install
+git clone https://github.com/amir-9/api-test.git
+```
+
+### install Packages
+```
+yarn
 ```
 
 ### Compiles and hot-reloads for development
@@ -10,15 +15,7 @@ yarn install
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
 ### Lints and fixes files
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
