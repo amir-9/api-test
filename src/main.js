@@ -3,6 +3,8 @@ import { createVuetify } from 'vuetify'
 import App from './App.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import {  VueFinalModal, ModalsContainer } from 'vue-final-modal'
+import vfmPlugin from 'vue-final-modal'
 import './style.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 /* import specific icons */
@@ -17,11 +19,14 @@ const app = createApp(App)
 const vuetify = createVuetify()
 /* add font awesome icon component */
 app.component('font-awesome-icon', FontAwesomeIcon)
+app.component('VueFinalModal',VueFinalModal)
+app.component('ModalsContainer',ModalsContainer)
 
 app.config.productionTip = false
 
 app.use(vuetify,axios,VueAxios)
 
+app.use(vfmPlugin())
 app.mount('#app')
 
 
