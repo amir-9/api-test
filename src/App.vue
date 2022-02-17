@@ -44,7 +44,7 @@
           </button>
         </div>
         <div>
-          <button @click="pageData('prev')">
+          <button :disabled="currentItem ===0" @click="pageData('prev')">
             <span><font-awesome-icon :icon="['fas','circle-chevron-left']" /></span>
             <span> prev</span>
           </button>
@@ -52,32 +52,32 @@
         <div class="tdot">
           <span>...</span>
         </div>
-        <div @click="pageData('prev-3')">
+        <div v-if="currentItem >= (3 * itemsInPage)" @click="pageData('prev-3')">
           <button>{{ pageNumber - 3 }}</button>
         </div>
-        <div @click="pageData('prev-2')">
+        <div v-if="currentItem >= (2 * itemsInPage)" @click="pageData('prev-2')">
           <button>{{ pageNumber - 2 }}</button>
         </div>
-        <div @click="pageData('prev-1')">
+        <div v-if="currentItem >= itemsInPage" @click="pageData('prev-1')">
           <button>{{ pageNumber - 1 }}</button>
         </div>
         <div class="current">
-          <button>{{ pageNumber }}</button>
+          <button disabled>{{ pageNumber }}</button>
         </div>
-        <div @click="pageData('next-1')">
+        <div v-if="currentItem < teamData.length - itemsInPage" @click="pageData('next-1')">
           <button>{{ pageNumber + 1 }}</button>
         </div>
-        <div @click="pageData('next-2')">
+        <div v-if="currentItem < teamData.length - (2 * itemsInPage)" @click="pageData('next-2')">
           <button>{{ pageNumber + 2 }}</button>
         </div>
-        <div @click="pageData('next-3')">
+        <div v-if="currentItem < teamData.length - (3 * itemsInPage)" @click="pageData('next-3')">
           <button>{{ pageNumber + 3 }}</button>
         </div>
         <div class="tdot">
           <span>...</span>
         </div>
         <div>
-          <button @click="pageData('next')">
+          <button :disabled="currentItem > (teamData.length - itemsInPage)" @click="pageData('next')">
             <span> next</span>
             <span><font-awesome-icon :icon="['fas','circle-chevron-right']" /></span>
           </button>

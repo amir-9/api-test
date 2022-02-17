@@ -101,13 +101,18 @@ body {
     transition: all 200ms;
     cursor: pointer;
 }
-
+#app .pagination-buttons button:disabled {
+    cursor: not-allowed;
+}
+#app .pagination-buttons .current button:disabled {
+    cursor: unset;
+}
 #app .pagination-buttons .current button{
     font-weight: 600;
     background: rgba(255, 255, 255, 0.65);
     padding: 10px;
 }
-#app .pagination-buttons button:hover {
+#app .pagination-buttons button:hover:enabled {
     background: #333;
     color: #eeeeee;
     border-color: #333;
