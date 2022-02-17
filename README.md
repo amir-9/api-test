@@ -15,7 +15,3 @@ yarn
 yarn serve
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
